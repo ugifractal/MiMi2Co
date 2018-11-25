@@ -1,0 +1,29 @@
+Speaker,Speaker,,1,Active,110,Y,Y,Y,Y
+Chair,Chair,,1,Active,100,Y,Y,Y,Y
+Toastmaster,Toastmaster,,1,Active,90,Y,Y,Y,Y
+Speech Evaluator,Speech Evaluator,,1,Active,70,N,N,N,Y
+General Evaluator,General Evaluator,,1,Active,80,Y,Y,Y,Y
+Table Topics Master,Table Topics Master,,1,Active,60,Y,Y,Y,Y
+Table Topics Speaker,Table Topics Speaker,,1,Active,10,N,N,Y,Y
+Table Topics Speech Evaluator,Table Topics Evaluator,,1,Active,50,N,N,N,Y
+Grammarian,Grammarian,,1,Active,40,N,N,Y,Y
+Ah-Counter,Ah-Counter,,1,Active,30,N,N,Y,Y
+Timer,Timer,,1,Active,20,N,N,Y,Y
+Exec: President,President,,2,Active,900,N,N,Y,Y
+Exec: Sergeant at Arms,Sergeant at Arms,,2,Active,904,N,N,Y,Y
+Exec: VP Education,VP Education,,2,Active,901,N,N,Y,Y
+Exec: VP Membership,VP Membership,,2,Active,902,N,N,Y,Y
+Exec: Immediate Past President,Immediate Past President,,2,Active,907,N,N,Y,Y
+Exec: VP Public Relations,VP Public Relations,,2,Active,903,N,N,Y,Y
+Exec: Secretary,Secretary,,2,Active,905,N,N,Y,Y
+Exec: Treasurer,Treasurer,,2,Active,906,N,N,Y,Y
+Meeting (Role Placeholder),Meeting Placeholder,,3,Active,130,N,N,N,Y
+Meeting (Break Placeholder),Meeting Break Placeholder,,3,Active,150,N,N,N,N
+Meeting (facilitator),Facilitator,,1,Active,908,N,N,Y,Y
+Meeting (pre),Arrival placeholder,,3,Active,909,N,N,N,Y
+Meeting (post),Close placeholder,,3,Active,910,N,N,N,Y
+Meeting (special),Custom placeholder,,3,Active,911,N,N,Y,Y
+Adjournment,Meeting adjournment,,3,Active,140,N,N,Y,Y
+Attendee (No Role),Attendee (No Role),,1,Active,120,N,N,N,Y
+Um-report,Um-report,,1,Active,912,N,N,N,Y
+Default,Default,,1,Active,913,N,N,Y,Y

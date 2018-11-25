@@ -1,0 +1,35 @@
+<% @page_title = "All Meetings" %>
+
+<h2>Meetings</h2>
+<%= link_to("Add New Meeting", new_meeting_path, :class => 'action new') %>
+
+<table class="table table-striped">
+  <tr class="header">
+    <th>Meeting ID</th>
+    <th>Club</th>
+    <th>Type</th>
+    <th>Meeting Status</th>
+    <th>Date</th>
+    <th>Theme</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @meetings.each do |meeting| %>
+  <tr>
+    <td><%= meeting.id %></td>
+    <td><%= meeting.club.name %></td>
+    <td><%= meeting.meeting_type.name %></td>
+    <td><%= meeting.meeting_status.name %></td>
+    <td><%= meeting.date.strftime("%d %b - %I:%M%p") %></td>
+    <td><%= meeting.theme %></td>
+    <td >
+      <%= link_to("Show", meeting_path(meeting), :class => 'action show') %>
+      <%= link_to("Edit", edit_meeting_path(meeting), :class => 'action edit') %>
+      <%= link_to("Delete", delete_meeting_path(meeting), :class => 'action delete') %>
+      <%= link_to("Index", {:controller => 'meeting_details', :action => 'index', :meeting_id => meeting.id})  %>
+
+ 
+    </td>
+  </tr>
+
+  <% end %>

@@ -1,0 +1,16 @@
+<% @page_title = "Show Meeting" %>
+
+<h2>Show Meetings</h2>
+<%= link_to("<< Back to List", meetings_path, :class => 'back-link') %>
+<%= simple_form_for(@meeting, html: { class: 'form-vertical' }) do |f| %>
+<%= f.association :meeting_type, label_method: :name, include_blank: true, prompt: "Choose a Meeting Type" %>
+<%= f.association :meeting_status, label_method: :name, include_blank: true, prompt: "Choose a meeting status" %>
+<%= f.association :club, label_method: :name, include_blank: true, prompt: "Choose a Club" %>
+<%= f.input :location %>
+<%= f.input :date %>
+<%= f.input :theme %>
+<%= f.input :address %>
+<%= f.input :arrival_comments %>
+<%= f.input :created_at %>
+<%= f.input :updated_at %>
+<% end %>

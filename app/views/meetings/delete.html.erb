@@ -1,0 +1,11 @@
+<% @page_title = "Delete Meeting" %>
+
+<h2>Delete Meeting</h2>
+<%= link_to("<< Back to List", meetings_path, :class => 'back-link') %>
+  <%= form_for(@meeting, :method => 'delete') do |f| %>
+    <p>Are you sure you want to permanently delete this meeting?</p>
+    <p class="reference-name"><%= f.object.theme %></p>
+    <div class="form-buttons">
+      <%= f.submit("Delete meeting") %>
+    </div>
+  <% end %>

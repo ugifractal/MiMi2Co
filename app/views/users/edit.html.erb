@@ -1,0 +1,18 @@
+<% @page_title = "Update User" %>
+
+<h2>Update User</h2>
+<%= link_to("<< Back to List", users_path, :class => 'back-link') %>
+<%= simple_form_for(@user, html: { class: 'form-vertical' }) do |f| %>
+<%= f.input :username %>
+<%= f.input :email %>
+<%= f.input :password_digest %>
+<%= f.input :first_name %>
+<%= f.input :last_name %>
+<%= f.input :display_name %>
+<%= f.input :dob %>
+<%= f.input :start_date %>
+<%= f.input :end_date %>
+<%= f.input :mobile %>
+<%= f.input :comments %>
+<%= f.button :submit %>
+<% end %>

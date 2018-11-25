@@ -1,0 +1,25 @@
+<% @page_title = "New Club" %>
+
+<h2>New Club</h2>
+<%= link_to("<< Back to List", clubs_path, :class => 'back-link') %>
+<%= simple_form_for(@club) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :city %>
+  <%= f.input :country %>
+  <%= f.association :club_type, label_method: :name, include_blank: true, prompt: "Choose a Club Type" %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date, include_blank: true %>
+  <%= f.input :address %>
+  <%= f.input :district %>
+  <%= f.input :division %>
+  <%= f.input :area %>
+  <%= f.input :registration_number %>
+  <%= f.input :website %>
+  <%= f.input :email %>
+  <%= f.input :mission %>
+  <%= f.input :facebook %>
+  <%= f.input :display_name %>
+  <%= f.input :logo %>
+  <%= f.button :submit %>
+<% end %>

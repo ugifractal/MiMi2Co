@@ -1,0 +1,11 @@
+<% @page_title = "Delete Club" %>
+
+<h2>Delete Club</h2>
+<%= link_to("<< Back to List", clubs_path, :class => 'back-link') %>
+<%= form_for(@club, :method => 'delete') do |f| %>
+  <p>Are you sure you want to permanently delete this club?</p>
+  <p class="reference-name"><%= f.object.name %></p>
+  <div class="form-buttons">
+    <%= f.submit("Delete Club") %>
+  </div>
+<% end %>

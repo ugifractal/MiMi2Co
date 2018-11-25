@@ -1,0 +1,44 @@
+<% @page_title = "All Meeting Details" %>
+
+<h2>Meeting Details</h2>
+<%= link_to("Add New Meeting Detail", meeting_details_path(:meeting_id => @meeting_id, :newrow => '1'), :class => 'action index')  %>
+</br>
+<%= link_to "PDF File", meeting_details_path(:meeting_id => @meeting_id, format: 'pdf') %>
+
+<table class="table table-striped">
+  <tr class="header">
+    <th>ID</th>
+    <th>Date</th>
+    <th>Theme</th>
+    <th>Role</th>
+    <th>User</th>
+    <th>Meeting Detail Status</th>
+    <th>Sort Order</th>
+    <th>Duration From</th>
+    <th>Duration To</th>
+    <th>Description</th>
+    <th>Comments</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @meeting_details.each do |f| %>
+  <tr>
+    <td><%= f.meeting.id %></td>
+    <td><%= f.meeting.date.strftime("%d %b - %I:%M%p") %></td>
+    <td><%= f.meeting.theme %></td>
+    <td><%= f.role.name %></td>
+    <td><%= f.user.display_name %></td>
+    <td><%= f.meeting_detail_status.name %></td>
+    <td><%= f.sort_order %></td>
+    <td><%= f.duration_from %></td>
+    <td><%= f.duration_to %></td>
+    <td><%= f.description %></td>
+    <td><%= f.comments %></td>
+    <td >
+      <%= link_to("Show", meeting_detail_path(f), :class => 'action show') %>
+      <%= link_to("Edit", edit_meeting_detail_path(f, :hello=>1), :class => 'action edit') %>
+      <%= link_to("Delete", delete_meeting_detail_path(f), :class => 'action delete') %>
+    </td>
+  </tr>
+
+  <% end %>

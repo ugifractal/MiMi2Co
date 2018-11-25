@@ -1,0 +1,35 @@
+<% @page_title = "All UsersClubs" %>
+
+<%= link_to("<< Back to Clubs", clubs_path, :class => 'bank-link') %>
+
+<h2>Users Clubs</h2>
+<%= link_to("Add New UsersClubs", new_users_club_path(:club_id => @club.id), :class => 'action new') %>
+
+<table class="table table-striped">
+  <tr class="header">
+    <th>User</th>
+    <th>Club</th>
+    <th>User Type</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Comments</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @users_clubs.each do |f| %>
+  <tr>
+    <td><%= f.user.display_name %></td>
+    <td><%= f.club.name %></td>
+    <td><%= f.user_type.name %></td>
+    <td><%= f.start_date %></td>
+    <td><%= f.end_date %></td>
+    <td><%= f.comments %></td>
+
+    <td >
+      <%= link_to("Show", users_club_path(f, :club_id => @club.id), :class => 'action show') %>
+      <%= link_to("Edit", edit_users_club_path(f, :club_id => @club.id), :class => 'action edit') %>
+      <%= link_to("Delete", delete_users_club_path(f, :club_id => @club.id), :class => 'action delete') %>
+    </td>
+  </tr>
+
+  <% end %>

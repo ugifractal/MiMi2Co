@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<div class="container">
+
+  <head>
+    <title>P77: <%= @page_title || "Admin Area" %> </title>
+    <meta charset="UTF-8">
+    <%= stylesheet_link_tag('application', :media => 'all') %>
+  </head>
+
+  <body>
+    <% if !flash[:notice].blank? %>
+      <div class="notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Clubs", clubs_path %></li>
+        <li><%= link_to "Users", users_path %></li>
+        <li><%= link_to "Meetings", meetings_path %></li>
+        <li><%= link_to "MeetingDetails", meeting_details_path %></li>
+      </ul>
+
+      <%= yield %>
+    </div>
+  </body>
+
+</div>
+</html>

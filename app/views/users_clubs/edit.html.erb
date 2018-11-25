@@ -1,0 +1,14 @@
+<% @page_title = "Edit UsersCub" %>
+
+<h2>Edit UserClub</h2>
+<%= link_to("<< Back to List", users_clubs_path(:club_id => @club.id), :class => 'back-link') %>
+
+<%= simple_form_for(@users_club, url: users_club_path(@club, :club_id => @club.id), html: { class: 'form-vertical' }) do |f| %>
+<%= f.association :user, label_method: :display_name, include_blank: true, prompt: "Choose a User" %>
+<%= f.association :club, label_method: :name, include_blank: true, prompt: "Choose a Club" %>
+<%= f.association :user_type, label_method: :name, include_blank: true, prompt: "Choose a User Type" %>
+<%= f.input :start_date %>
+<%= f.input :end_date %>
+<%= f.input :comments %>
+<%= f.button :submit %>
+<% end %>

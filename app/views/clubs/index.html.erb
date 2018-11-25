@@ -1,0 +1,27 @@
+<% @page_title = "All Clubs" %>
+
+<h2>Clubs</h2>
+<%= link_to("Add New Club", new_club_path, :class => 'action new') %>
+
+<table class="table table-striped">
+  <tr class="header">
+    <th>#</th>
+    <th>Club</th>
+    <th># of Users</th>
+    <th>Actions</th>
+  </tr>
+
+
+  <% @clubs.each do |club| %>
+    <tr>
+      <td><%= club.id %></td>
+      <td><%= club.name %></td>
+      <td><%= club.users_clubs.size %></td>
+      <td>
+        <%= link_to("View Members", users_clubs_path(:club_id => club.id), :class => 'action show') %>
+        <%= link_to("Show", club_path(club), :class => 'action show') %>
+        <%= link_to("Edit", edit_club_path(club), :class => 'action edit') %>
+        <%= link_to("Delete", delete_club_path(club), :class => 'action delete') %>
+      </td>
+    </tr>
+  <% end %>

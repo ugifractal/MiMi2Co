@@ -1,0 +1,23 @@
+<% @page_title = "Edit MeetingDetails" %>
+
+<h2>Edit MeetingDetails</h2>
+
+<%= link_to("<< Back to Meetings", meetings_path, :class => 'back-link') %>
+
+<%= @meeting_details.each do |g| %>
+
+<div class="form-inline">
+  <%= simple_form_for(g) do |f| %>
+    <%= f.association :role, label_method: :name, include_blank: true, disabled: false %>
+    <%= f.association :user, label_method: :display_name, include_blank: true %>
+    <%= f.association :meeting_detail_status, label_method: :name, include_blank: true %>
+    <%= f.input :sort_order, placeholder: 'sort order' %>
+    <%= f.input :duration_from, placeholder: 'Min time' %>
+    <%= f.input :duration_to, placeholder: 'Max time' %>
+    <%= f.input :description, placeholder: 'Description' %>
+    <%= f.input :comments, placeholder: 'Comments' %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+
+<% end %>
