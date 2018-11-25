@@ -6,8 +6,7 @@ class MeetingDetailsPdf < Prawn::Document
     super()
     @meeting_id = meeting_id
     @meeting_details = meeting_details
-
-   user_id
+    user_id
   end
 
   def user_id
